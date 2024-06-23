@@ -1,6 +1,6 @@
 body {
   margin-top: 5%;
-  background-color: white;
+  background:#232222;
   font-family: "Oswald", sans-serif;
   font-family: "Poppins", sans-serif;
 }
@@ -13,11 +13,12 @@ body {
   height: 347px;
   justify-content: center;
   border-radius: 10px;
-  background: rgb(254, 242, 242);
+  background:rgb(80, 78, 78);
 }
 
 #login-up {
   text-align: center;
+  color: azure;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -35,6 +36,10 @@ body {
   height: 35px;
   text-align: left;
   text-indent: 10px;
+  background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
 }
 
 #login-btn {
@@ -61,4 +66,11 @@ body {
 #container2 div {
   text-align: center;
   margin-bottom: 10px;
+}
+
+a{
+  color:rgb(227, 90, 21);
+  text-decoration: solid underline;
+  margin: 0%;
+  text-align: center;
 }
