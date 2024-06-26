@@ -8,12 +8,11 @@ const app = new express();
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log(__dirname);
-app.use(express.static(path.join(__dirname,'css')));
 
-app.use(express.static(path.join(__dirname,'html')))
-
+app.use(express.static(path.join(__dirname,'public','html')))
 app.get("/login",(req,res)=>{
-    res.sendFile(path.join(__dirname,'html','login.html'))
+    res.sendFile(path.join(__dirname,'public','html','login.html'))
+    res.sendFile(path.join(__dirname,'public','css','login.css'));
 })
 
 
