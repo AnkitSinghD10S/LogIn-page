@@ -1,20 +1,20 @@
-import express from "express";
-import path from "path";
-import url from "url";
+const express= require("express");
+const db = require("./router/db-config");
 
 const port = process.env.port || 5000;
 const app = new express();
 
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-console.log(__dirname);
+// app.use(express.json());
 
-app.use(express.static(path.join(__dirname,'public','html')))
-app.get("/login",(req,res)=>{
-    res.sendFile(path.join(__dirname,'public','html','login.html'))
-    res.sendFile(path.join(__dirname,'public','css','login.css'));
+db.connect((err)=>{
+    if(err) throw err;
+    console.log("database is connected");
 })
 
+
+app.use("/js",express.static(__dirname+'/public/js'))
+app.use("/css",express.static(__dirname+'/public/css'))
+app.use("/",require('./router/pages'))
 
 app.listen(port,()=>{
     console.log(`sever is ruuning on ${port}`);
