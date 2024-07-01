@@ -1,4 +1,3 @@
-
 form.addEventListener("submit", () => {
   const login = {
     email: email.value,
@@ -9,19 +8,22 @@ form.addEventListener("submit", () => {
     method: "POST",
     body: JSON.stringify(login),
     headers: {
-      "Content-Type": "appliction/json",
+      "Content-Type": "application/json",
     },
-  }).
-  then((res) => res.json()).
-  then(data=>{
-    if(data.status=="error"){
-        success.style.dislay ="none"
-        error.style.dislay="block"
-        error.innerText = data.error
-      }else{
-        success.style.dislay="block"
-        error.style.dislay="block"
-        success.innerText= data.success
-      }
   })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.status == "error") {
+        success.style.display = "none";
+        error.style.display = "block";
+        error.innerText = data.error;
+      } else {
+        // success.style.display = "block";
+        // error.style.display = "none";
+        // success.innerText = data.success;
+        setTimeout(() => {
+          window.location.href = "/home";
+        },1);
+      }
+    });
 });

@@ -1,4 +1,4 @@
-
+const jwt = require("jsonwebtoken");
 const db = require("../router/db-config");
 const bcrypt = require("bcryptjs");
 
@@ -24,6 +24,16 @@ const login = async (req, res) => {
             error: "Incorrect email or password",
           });
         else {
+          const token = jwt.sign({ id: result[0].id }, process.env.JWT_SECRET, {
+            expiresIn: process.env.JWT_EXPIRES,
+          });
+          const cookieOptions = {
+            expiresIn: new Date(
+              Date.now() + process.env.COOKIE_EXPRIS * 24 * 60 * 60 * 1000
+            ),
+            httpOnly: true,
+          };
+          res.cookie("user", token, cookieOptions);
           return res.json({
             status: "success",
             success: "User has been logged In",

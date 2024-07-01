@@ -1,9 +1,10 @@
 const express= require("express");
 const db = require("./router/db-config");
+const cookie = require("cookie-parser")
 
 const port = process.env.port || 5000;
 const app = new express();
-
+app.use(cookie());
 app.use(express.json());
 
 db.connect((err)=>{

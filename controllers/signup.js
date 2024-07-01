@@ -14,7 +14,7 @@ const signup = async (req, res) => {
       [email],
       async (err, result) => {
         if (err) throw err;
-        if (result[0]) {
+        if (result.length>0) {
           return res.json({
             status: "error",
             error: "Email has already been registered",
