@@ -5,7 +5,7 @@ const logout = require("../controllers/logout");
 const loggedIn = require("../controllers/loggedIn");
 
 router.get("/", (req, res) => {
-  res.sendFile("index.html", { root: "./public/html" });
+  res.sendFile("index.html", { root: "./" });
 });
 
 router.get("/signup", (req, res) => {
