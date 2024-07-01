@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="/css/signup.css">
 </head>
 <body>
-    <form class="container">
+    <form  class="container" onsubmit="return false;" id="form">
         <h2>Sign-up</h2>
-        <input type="name" name="full_name" placeholder="Full Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <button id="sign-up-btn">Sign Up</button>
-        <div>Already have an account ? <a href="/login">login</a></div>
-    </form>
-</body>
+            <input type="name" id="name_input" placeholder="Name" required autocomplete="off">
+            <input type="email" id="email" placeholder="Email" required autocomplete="off">
+            <input type="password" id="password" placeholder="Password"required autocomplete="off">
+            <button type="submit" id="sign-up-btn">Sign Up</button>
+            <div>Already have an account ? <a href="/login">login</a></div>
+            <div class="alert alert-danger" role="alert" id="error" style="display: none;">
+                ERROR
+            </div>
+            <div class="alert alert-success" role="alert" id="success" style="display: none;">
+                SUCCESS
+            </div>
+        </form>
+        <script src="../js/signup.js"></script>
+    </body>
 </html>
