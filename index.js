@@ -1,11 +1,12 @@
 const express= require("express");
 const db = require("./router/db-config");
 const cookie = require("cookie-parser")
-
+require('dotenv').config();
 const port = process.env.port || 5000;
 const app = new express();
 app.use(cookie());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 db.connect((err)=>{
     if(err) throw err;
