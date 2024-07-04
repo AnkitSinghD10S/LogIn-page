@@ -4,15 +4,15 @@ const router = express.Router();
 const logout = require("../controllers/logout");
 const loggedIn = require("../controllers/loggedIn");
 
-router.get("/", (req, res) => {
+router.get("/LogIn-page/", (req, res) => {
   res.sendFile("index.html", { root: "./" });
 });
 
-router.get("/signup", (req, res) => {
+router.get("/LogIn-page/signup", (req, res) => {
   res.sendFile("signup.html", { root: "./public/html" });
 });
 
-router.get("/login", (req, res) => {
+router.get("/LogIn-page/login", (req, res) => {
   res.sendFile("login.html", { root: "./public/html" });
 });
 
