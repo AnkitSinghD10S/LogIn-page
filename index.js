@@ -13,8 +13,8 @@ db.connect((err) => {
   console.log("database is connected");
 });
 
-app.use("/js", express.static(__dirname + "/public/js"));
-app.use("/css", express.static(__dirname + "/public/css"));
+app.use("/js", express.static(__dirname +"/public/js"));
+app.use("/css", express.static(__dirname +"/public/css"));
 app.use("/", require("./router/pages"));
 
 app.use("/api", require("./controllers/auth"));
