@@ -9,15 +9,15 @@ router.get("/", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.sendFile("signup.html", { root: "./public/html" });
+  res.sendFile("signup.html", { root: "./" });
 });
 
 router.get("/login", (req, res) => {
-  res.sendFile("login.html", { root:"./public/html" });
+  res.sendFile("login.html", { root:"./" });
 });
 
 router.get("/forget",(req,res)=>{
-    res.sendFile("forget.html",{root:"./public/html"})
+    res.sendFile("forget.html",{root:"./"})
 })
 
 router.get("/logout",logout)
