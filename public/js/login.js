@@ -18,9 +18,6 @@ form.addEventListener("submit", () => {
         error.style.display = "block";
         error.innerText = data.error;
       } else {
-        // success.style.display = "block";
-        // error.style.display = "none";
-        // success.innerText = data.success;
         setTimeout(() => {
           window.location.href = "/home";
         },1);

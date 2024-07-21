@@ -27,7 +27,7 @@ router.get('/home', loggedIn, (req, res) => {
       if (req.headers.accept && req.headers.accept.indexOf('application/json') !== -1) {
           res.json({ userName: req.user.name });
       } else {
-          res.sendFile('home.html',{root:'./public/html'});
+          res.sendFile('home.html',{root:'./'});
       }
   } else {
       console.log("error");
