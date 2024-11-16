@@ -20,7 +20,7 @@ const sendOtp = async (req, res) => {
       });
     }
 
-    const otp = crypto.randomBytes(3).toString("hex");
+    const otp = Math.floor(Math.random()*1000000);
     const expirationTime = new Date(Date.now() + 10 * 60000);
 
     db.query(

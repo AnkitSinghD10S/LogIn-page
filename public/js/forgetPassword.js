@@ -9,7 +9,6 @@ function sendOtp() {
   })
     .then((response) => response.json())
     .then((data) => {
-      //   alert(data.status);
       if (data.status === "success") {
         document.getElementById("otp-form").style.display = "none";
         document.getElementById("reset-form").style.display = "block";
